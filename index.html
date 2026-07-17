@@ -140,7 +140,8 @@ h2{font-size:clamp(30px,3.6vw,42px);margin-bottom:16px}
 .gift-note{margin-top:26px;font-size:20px;background:var(--white);border-left:5px solid var(--brass);padding:18px 22px;border-radius:0 8px 8px 0;max-width:900px}
 
 /* One-time services */
-.svc-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(22,50,74,.08)}
+.svc-table-wrap{border-radius:10px;box-shadow:0 4px 14px rgba(22,50,74,.08);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.svc-table{width:100%;min-width:640px;border-collapse:collapse;background:var(--white);border-radius:10px;overflow:hidden}
 .svc-table th{background:var(--navy);color:var(--white);text-align:left;padding:16px 22px;font-size:20px;letter-spacing:.5px}
 .svc-table td{padding:18px 22px;border-top:1px solid var(--paper-dark);font-size:20px;vertical-align:top}
 .svc-table td:last-child{font-family:'Bitter',serif;font-weight:700;color:var(--navy);white-space:nowrap;font-size:22px}
@@ -179,7 +180,7 @@ h2{font-size:clamp(30px,3.6vw,42px);margin-bottom:16px}
 .contact{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e6edf3;text-align:center}
 .contact h2{color:var(--white)}
 .contact .section-intro{color:#c3d1dc;margin:0 auto 36px}
-.bigphone{font-family:'Bitter',serif;font-weight:800;font-size:clamp(36px,5.4vw,58px);color:var(--brass-bright);text-decoration:none;display:inline-block;margin-bottom:12px}
+.bigphone{font-family:'Bitter',serif;font-weight:800;font-size:clamp(26px,6.5vw,58px);color:var(--brass-bright);text-decoration:none;display:inline-block;margin-bottom:12px;max-width:100%;overflow-wrap:break-word;word-break:break-word}
 .contact .sub{font-size:21px;color:#a9bcc9;margin-bottom:30px}
 
 /* Footer */
@@ -363,16 +364,18 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
     <div class="eyebrow">No hourly rates, ever</div>
     <h2 class="reveal">House Calls — Flat Pricing</h2>
     <p class="section-intro"><strong>We make house calls.</strong> One flat price — no hourly rate, no trip fee, no surprises. Travel is included anywhere in our core service area, and you get a written summary of everything we did. Many problems never need a visit at all: phone fixes are free for members.</p>
-    <table class="svc-table reveal">
-      <thead><tr><th scope="col">Service</th><th scope="col">What's included</th><th scope="col">Price</th></tr></thead>
-      <tbody>
-        <tr><td><span class="svc-name">Scam Cleanup</span></td><td>Already clicked, paid, or let someone into your computer? We remove their access, secure every account, help contact your bank, and file the official reports — with a written summary for your family.</td><td>$250–450</td></tr>
-        <tr><td><span class="svc-name">Home Digital Checkup</span></td><td>A full review of your computers, phones, tablets, and Wi-Fi — up to 3 devices, problems fixed on the spot, plus a simple report card. Additional devices $25 each.</td><td>$175</td></tr>
-        <tr><td><span class="svc-name">Account Lockdown</span></td><td>Your email, bank, Social Security, and Medicare accounts secured properly — strong passwords, two-step sign-in, recovery info updated.</td><td>$150</td></tr>
-        <tr><td><span class="svc-name">Safe Setup</span></td><td>A new phone or computer set up the right way: scam-call screening, spam filters, safe settings, and a printed guide.</td><td>$125</td></tr>
-        <tr><td><span class="svc-name">Family Briefing</span></td><td>A one-hour session with your adult children — in person or by video — covering what's protected and what to watch for.</td><td>$75</td></tr>
-      </tbody>
-    </table>
+    <div class="svc-table-wrap reveal">
+      <table class="svc-table">
+        <thead><tr><th scope="col">Service</th><th scope="col">What's included</th><th scope="col">Price</th></tr></thead>
+        <tbody>
+          <tr><td><span class="svc-name">Scam Cleanup</span></td><td>Already clicked, paid, or let someone into your computer? We remove their access, secure every account, help contact your bank, and file the official reports — with a written summary for your family.</td><td>$250–450</td></tr>
+          <tr><td><span class="svc-name">Home Digital Checkup</span></td><td>A full review of your computers, phones, tablets, and Wi-Fi — up to 3 devices, problems fixed on the spot, plus a simple report card. Additional devices $25 each.</td><td>$175</td></tr>
+          <tr><td><span class="svc-name">Account Lockdown</span></td><td>Your email, bank, Social Security, and Medicare accounts secured properly — strong passwords, two-step sign-in, recovery info updated.</td><td>$150</td></tr>
+          <tr><td><span class="svc-name">Safe Setup</span></td><td>A new phone or computer set up the right way: scam-call screening, spam filters, safe settings, and a printed guide.</td><td>$125</td></tr>
+          <tr><td><span class="svc-name">Family Briefing</span></td><td>A one-hour session with your adult children — in person or by video — covering what's protected and what to watch for.</td><td>$75</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="gift-note" style="margin-top:26px"><strong>Service area:</strong> flat prices include travel to Toms River, Berkeley, Manchester, Whiting, Beachwood, Pine Beach, South Toms River &amp; Bayville. A little farther out? We'll quote one flat number on the phone before we book. Members: no travel adjustment anywhere in Ocean County.</div>
     <figure class="photo-band reveal">
       <img src="images/ocean-county-beach.jpg" alt="An Ocean County, NJ beach with dune grass and a split-rail fence, overcast day" loading="lazy" width="2880" height="2160">
