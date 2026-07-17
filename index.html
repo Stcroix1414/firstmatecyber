@@ -44,7 +44,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--brass-bright);outli
 
 /* ===== Header ===== */
 header{background:var(--navy);position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap;position:relative}
+.nav-toggle{display:none;background:none;border:2px solid #58748c;border-radius:6px;padding:10px;cursor:pointer;flex-shrink:0}
+.nav-toggle span{display:block;width:24px;height:3px;background:#dfe7ee;border-radius:2px}
+.nav-toggle span+span{margin-top:5px}
+.nav-toggle:hover{border-color:var(--brass-bright)}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand svg{flex-shrink:0}
 .brand-name{font-family:'Bitter',serif;font-weight:800;font-size:29px;color:var(--white);letter-spacing:.5px}
@@ -206,7 +210,11 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
   .steps,.community-grid,.background-grid{grid-template-columns:1fr}
   .plans{grid-template-columns:1fr}
   .fridge-card{transform:rotate(0);margin-top:12px}
-  .nav-links{display:none}
+  .nav-toggle{display:inline-block}
+  .nav-links{display:none;flex-direction:column;gap:0;width:100%;background:var(--navy-deep);position:absolute;left:0;right:0;top:100%;padding:6px 24px 18px;box-shadow:0 10px 20px rgba(0,0,0,.35)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 0;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links a:first-child{border-top:none}
   section{padding:56px 0}
   .svc-table td:last-child{white-space:normal}
 }
@@ -235,7 +243,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       <span><span class="brand-name">First Mate Cyber</span>
       <span class="brand-sub">Scam Protection · Ocean County NJ</span></span>
     </a>
-    <nav class="nav-links" aria-label="Main">
+    <nav id="nav-links" class="nav-links" aria-label="Main">
       <a href="#how">How It Works</a>
       <a href="#plans">Plans</a>
       <a href="#services">Services</a>
@@ -244,6 +252,9 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       <a href="#background">Background</a>
     </nav>
     <span class="call-btn disabled" role="button" aria-disabled="true">Booking Opens Spring 2027</span>
+    <button type="button" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -506,6 +517,22 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       });
     }, {threshold:0.15});
     els.forEach(function(el){ io.observe(el); });
+  });
+})();
+
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
   });
 })();
 </script>
