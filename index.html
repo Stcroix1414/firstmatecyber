@@ -155,8 +155,13 @@ h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:16px}
 .comm p{font-size:17.5px;color:#b9c8d4;margin-bottom:16px}
 .comm .cprice{font-family:'Bitter',serif;font-weight:700;font-size:22px;color:var(--brass-bright)}
 
+/* Background / credibility */
+#background{position:relative;padding-bottom:110px}
+.background-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.comm .ico{width:48px;height:48px;border-radius:50%;background:var(--brass);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.background-grid .comm p{margin-bottom:0}
+
 /* About */
-#about{position:relative;padding-bottom:110px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .about p{margin-bottom:18px;font-size:19px}
 .cred{background:var(--white);border-radius:10px;padding:30px;box-shadow:0 4px 14px rgba(22,50,74,.08);transition:transform .25s ease,box-shadow .25s ease}
@@ -190,11 +195,14 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
 .plans .plan:nth-child(2){transition-delay:.1s}
 .community-grid .comm:nth-child(2){transition-delay:.1s}
 .community-grid .comm:nth-child(3){transition-delay:.2s}
+.background-grid .comm:nth-child(2){transition-delay:.1s}
+.background-grid .comm:nth-child(3){transition-delay:.2s}
+.background-grid .comm:nth-child(4){transition-delay:.3s}
 
 /* ===== Responsive ===== */
 @media(max-width:900px){
   .hero-grid,.about-grid{grid-template-columns:1fr}
-  .steps,.community-grid{grid-template-columns:1fr}
+  .steps,.community-grid,.background-grid{grid-template-columns:1fr}
   .plans{grid-template-columns:1fr}
   .fridge-card{transform:rotate(0);margin-top:12px}
   .nav-links{display:none}
@@ -232,6 +240,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       <a href="#services">Services</a>
       <a href="#communities">For Communities</a>
       <a href="#about">About</a>
+      <a href="#background">Background</a>
     </nav>
     <span class="call-btn disabled" role="button" aria-disabled="true">Booking Opens Spring 2027</span>
   </div>
@@ -422,6 +431,38 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Real-world experience, not a certification alone</div>
+    <h2 class="reveal">What I Actually Deal With, Day to Day</h2>
+    <p class="section-intro">This isn't theoretical. Every week, I'm the person a business calls when something's already gone wrong — and I fix it. Here's the kind of work that experience is built on:</p>
+    <div class="background-grid">
+      <div class="comm reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>Ransomware Response</h3>
+        <p>When a company's files get locked and criminals demand payment, I'm the one who gets called at 2am. I contain the damage, work out what happened, and get the business running again — without paying the ransom.</p>
+      </div>
+      <div class="comm reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3>Email Account Takeovers</h3>
+        <p>Scammers break into email accounts constantly — reading messages, redirecting invoices, impersonating people to steal money. I investigate exactly how they got in, lock them out for good, and trace what they touched.</p>
+      </div>
+      <div class="comm reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M21 21l-5.2-5.2"/></svg></div>
+        <h3>Phishing &amp; Fraud Investigation</h3>
+        <p>I analyze the scam emails and fake websites criminals use to trick people, including sophisticated attacks that can slip past two-factor authentication. I know their playbook because I take it apart for a living.</p>
+      </div>
+      <div class="comm reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+        <h3>Reporting &amp; Documentation</h3>
+        <p>After every incident, I write a clear report — what happened, what I fixed, what to watch for. You get the same thing after every visit: no jargon, just a plain answer.</p>
+      </div>
+    </div>
+    <div class="gift-note" style="margin-top:40px;font-style:italic">"I bring this same level of seriousness to a grandmother's laptop that I bring to a company's entire network. The scams are often identical — just aimed at someone with less backup."</div>
   </div>
   <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,10 400,50 600,28 C800,6 1000,44 1200,24 L1200,60 L0,60 Z" fill="#16324a"/></svg></div>
 </section>
