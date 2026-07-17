@@ -53,21 +53,30 @@ header{background:var(--navy);position:sticky;top:0;z-index:50;box-shadow:0 2px 
 .nav-links a{color:#dfe7ee;text-decoration:none;font-weight:600;font-size:17px}
 .nav-links a:hover{color:var(--brass-bright)}
 .call-btn{background:var(--brass);color:var(--white);text-decoration:none;font-weight:700;font-size:18px;padding:10px 20px;border-radius:6px;white-space:nowrap}
-.call-btn:hover{background:var(--brass-bright)}
+.call-btn{transition:background .2s ease,transform .2s ease}
+.call-btn:hover{background:var(--brass-bright);transform:translateY(-2px)}
 
 /* ===== Hero ===== */
-.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:#eef3f7;padding:72px 0 84px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero{
+  background:
+    radial-gradient(ellipse 640px 420px at 82% 12%, rgba(200,146,46,.16), transparent 60%),
+    linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:#eef3f7;padding:72px 0 96px;overflow:hidden;position:relative;
+}
+.compass-rose{position:absolute;top:-100px;right:-110px;opacity:.15;pointer-events:none}
+.wave-divider{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:64px;line-height:0}
+.wave-divider svg{display:block;width:100%;height:100%}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;z-index:1}
 .badge-soon{display:inline-block;background:var(--brass);color:var(--white);font-weight:700;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;border-radius:20px;margin-bottom:20px}
 .hero h1{color:var(--white);font-size:clamp(34px,4.6vw,52px);font-weight:800;margin-bottom:22px}
 .hero h1 em{font-style:normal;color:var(--brass-bright)}
 .hero p.lead{font-size:22px;line-height:1.6;color:#cfdae3;margin-bottom:30px;max-width:34em}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
-.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:19px;padding:15px 28px;border-radius:8px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:19px;padding:15px 28px;border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease}
 .btn-gold{background:var(--brass);color:var(--white)}
-.btn-gold:hover{background:var(--brass-bright)}
+.btn-gold:hover{background:var(--brass-bright);transform:translateY(-2px)}
 .btn-ghost{border:2px solid #58748c;color:#e6edf3}
-.btn-ghost:hover{border-color:var(--brass-bright);color:var(--brass-bright)}
+.btn-ghost:hover{border-color:var(--brass-bright);color:var(--brass-bright);transform:translateY(-2px)}
 .trust-row{display:flex;gap:26px;flex-wrap:wrap;font-size:16.5px;color:#a9bcc9}
 .trust-row span{display:flex;align-items:center;gap:8px}
 .trust-row svg{flex-shrink:0}
@@ -78,7 +87,9 @@ header{background:var(--navy);position:sticky;top:0;z-index:50;box-shadow:0 2px 
   box-shadow:0 24px 50px rgba(0,0,0,.45), 0 3px 8px rgba(0,0,0,.3);
   transform:rotate(2.5deg);padding:26px 28px;max-width:400px;justify-self:center;
   border-top:10px solid var(--flag);
+  transition:transform .3s ease,box-shadow .3s ease;
 }
+.fridge-card:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 30px 58px rgba(0,0,0,.5), 0 4px 10px rgba(0,0,0,.35)}
 .fridge-card h3{font-size:21px;letter-spacing:1px;text-transform:uppercase;color:var(--flag);margin-bottom:4px}
 .fridge-card p.small{font-size:15px;color:#5c6a76;margin-bottom:14px;font-weight:600}
 .fridge-card ol{list-style:none;counter-reset:rule}
@@ -96,14 +107,24 @@ h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:16px}
 /* How it works */
 .alt{background:var(--paper-dark)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.step{background:var(--white);border-radius:10px;padding:30px 28px;border-top:5px solid var(--seafoam);box-shadow:0 4px 14px rgba(22,50,74,.08)}
+.step{background:var(--white);border-radius:10px;padding:30px 28px;border-top:5px solid var(--seafoam);box-shadow:0 4px 14px rgba(22,50,74,.08);transition:transform .25s ease,box-shadow .25s ease}
+.step:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(22,50,74,.16)}
 .step h3{font-size:22px;margin:14px 0 10px}
 .step p{font-size:18px;color:#3d4a55}
 .step .ico{width:52px;height:52px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
 
+/* Local photo band */
+.photo-band{position:relative;margin:44px 0 0;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(22,50,74,.2)}
+.photo-band img{display:block;width:100%;height:clamp(220px,34vw,380px);object-fit:cover;object-position:center 62%}
+.photo-band::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,36,52,.82) 0%,rgba(14,36,52,.15) 55%,rgba(14,36,52,0) 75%)}
+.photo-band-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 30px;color:var(--white)}
+.photo-band-cap strong{display:block;font-family:'Bitter',serif;font-size:clamp(20px,2.6vw,26px);margin-bottom:4px}
+.photo-band-cap span{font-size:16.5px;color:#cfdae3}
+
 /* Plans */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px}
-.plan{background:var(--white);border-radius:12px;padding:36px 34px;box-shadow:0 6px 20px rgba(22,50,74,.1);border:1px solid #e5ddc9;display:flex;flex-direction:column}
+.plan{background:var(--white);border-radius:12px;padding:36px 34px;box-shadow:0 6px 20px rgba(22,50,74,.1);border:1px solid #e5ddc9;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+.plan:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(22,50,74,.18)}
 .plan.featured{border:3px solid var(--brass);position:relative}
 .plan .tag{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--brass);color:var(--white);font-weight:700;font-size:15px;letter-spacing:1px;padding:5px 18px;border-radius:20px;white-space:nowrap}
 .plan h3{font-size:25px;margin-bottom:6px}
@@ -127,15 +148,18 @@ h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:16px}
 
 /* Community */
 .community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.comm{background:var(--navy);color:#dfe7ee;border-radius:10px;padding:32px 28px}
+.comm{background:var(--navy);color:#dfe7ee;border-radius:10px;padding:32px 28px;transition:transform .25s ease,box-shadow .25s ease}
+.comm:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.35)}
 .comm h3{color:var(--white);font-size:22px;margin-bottom:10px}
 .comm p{font-size:17.5px;color:#b9c8d4;margin-bottom:16px}
 .comm .cprice{font-family:'Bitter',serif;font-weight:700;font-size:22px;color:var(--brass-bright)}
 
 /* About */
+#about{position:relative;padding-bottom:110px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .about p{margin-bottom:18px;font-size:19px}
-.cred{background:var(--white);border-radius:10px;padding:30px;box-shadow:0 4px 14px rgba(22,50,74,.08)}
+.cred{background:var(--white);border-radius:10px;padding:30px;box-shadow:0 4px 14px rgba(22,50,74,.08);transition:transform .25s ease,box-shadow .25s ease}
+.cred:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(22,50,74,.16)}
 .cred h3{font-size:21px;margin-bottom:16px}
 .cred ul{list-style:none}
 .cred li{padding:10px 0 10px 34px;position:relative;border-top:1px solid var(--paper-dark);font-size:18px}
@@ -155,6 +179,16 @@ h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:16px}
 /* Footer */
 footer{background:var(--navy-deep);color:#8fa2b0;font-size:16px;padding:30px 0;text-align:center}
 footer a{color:#b9c8d4}
+
+/* Scroll reveal (progressive enhancement — no JS/no IO = fully visible) */
+.reveal{transition:opacity .7s ease, transform .7s ease}
+body.reveal-ready .reveal{opacity:0;transform:translateY(24px)}
+body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
+.steps .step:nth-child(2){transition-delay:.1s}
+.steps .step:nth-child(3){transition-delay:.2s}
+.plans .plan:nth-child(2){transition-delay:.1s}
+.community-grid .comm:nth-child(2){transition-delay:.1s}
+.community-grid .comm:nth-child(3){transition-delay:.2s}
 
 /* ===== Responsive ===== */
 @media(max-width:900px){
@@ -206,6 +240,14 @@ footer a{color:#b9c8d4}
 
 <!-- HERO -->
 <section class="hero">
+  <svg class="compass-rose" width="520" height="520" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="92" fill="none" stroke="#e8c07a" stroke-width="1.2"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#e8c07a" stroke-width="1"/>
+    <circle cx="100" cy="100" r="3" fill="#e8c07a"/>
+    <path d="M100 8 L100 26 M100 174 L100 192 M8 100 L26 100 M174 100 L192 100" stroke="#e8c07a" stroke-width="1.4"/>
+    <path d="M100 8 L94 30 L100 26 L106 30 Z" fill="#e8c07a"/>
+    <path d="M35 35 L48 48 M152 152 L165 165 M35 165 L48 152 M152 48 L165 35" stroke="#e8c07a" stroke-width="1"/>
+  </svg>
   <div class="wrap hero-grid">
     <div>
       <div class="badge-soon">Coming Spring 2027</div>
@@ -237,26 +279,27 @@ footer a{color:#b9c8d4}
       </div>
     </div>
   </div>
+  <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C200,60 400,0 600,20 C800,40 1000,10 1200,30 L1200,60 L0,60 Z" fill="#faf6ee"/></svg></div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section id="how">
   <div class="wrap">
     <div class="eyebrow">Simple by design</div>
-    <h2>How First Mate Cyber Works</h2>
+    <h2 class="reveal">How First Mate Cyber Works</h2>
     <p class="section-intro">No apps to learn. No accounts to manage. If you can send a text or make a phone call, you can use First Mate Cyber.</p>
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
         <h3>1. Something looks off</h3>
         <p>A strange email, a text about a package, a pop-up on your computer, a call about your grandson. Don't click. Don't pay. Don't panic.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>2. Send it to us</h3>
         <p>Text a photo of it, forward the email, or just call and describe it. A real local person — not a call center — looks at it the same day.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>3. Get a straight answer</h3>
         <p>"It's a scam — delete it," or "it's real, here's what to do." And if something already went wrong, we clean it up and secure your accounts.</p>
@@ -269,10 +312,10 @@ footer a{color:#b9c8d4}
 <section id="plans" class="alt">
   <div class="wrap">
     <div class="eyebrow">Monthly protection</div>
-    <h2>Protection Plans</h2>
+    <h2 class="reveal">Protection Plans</h2>
     <p class="section-intro">Both plans include <strong>unlimited phone support</strong> — call or text as often as you need, and most problems get fixed right over the phone, free. Less than one dinner out per month.</p>
     <div class="plans">
-      <div class="plan">
+      <div class="plan reveal">
         <h3>Peace of Mind</h3>
         <div class="price">$25<small>/month</small></div>
         <ul>
@@ -284,7 +327,7 @@ footer a{color:#b9c8d4}
         </ul>
         <a class="btn btn-gold" href="mailto:hello@firstmatecyber.com">Get Started</a>
       </div>
-      <div class="plan featured">
+      <div class="plan featured reveal">
         <div class="tag">Most popular with families</div>
         <h3>Digital Bodyguard</h3>
         <div class="price">$50<small>/month</small></div>
@@ -307,9 +350,9 @@ footer a{color:#b9c8d4}
 <section id="services">
   <div class="wrap">
     <div class="eyebrow">No hourly rates, ever</div>
-    <h2>House Calls — Flat Pricing</h2>
+    <h2 class="reveal">House Calls — Flat Pricing</h2>
     <p class="section-intro"><strong>We make house calls.</strong> One flat price — no hourly rate, no trip fee, no surprises. Travel is included anywhere in our core service area, and you get a written summary of everything we did. Many problems never need a visit at all: phone fixes are free for members.</p>
-    <table class="svc-table">
+    <table class="svc-table reveal">
       <thead><tr><th scope="col">Service</th><th scope="col">What's included</th><th scope="col">Price</th></tr></thead>
       <tbody>
         <tr><td><span class="svc-name">Scam Cleanup</span></td><td>Already clicked, paid, or let someone into your computer? We remove their access, secure every account, help contact your bank, and file the official reports — with a written summary for your family.</td><td>$250–450</td></tr>
@@ -320,6 +363,10 @@ footer a{color:#b9c8d4}
       </tbody>
     </table>
     <div class="gift-note" style="margin-top:26px"><strong>Service area:</strong> flat prices include travel to Toms River, Berkeley, Manchester, Whiting, Beachwood, Pine Beach, South Toms River &amp; Bayville. A little farther out? We'll quote one flat number on the phone before we book. Members: no travel adjustment anywhere in Ocean County.</div>
+    <figure class="photo-band reveal">
+      <img src="images/ocean-county-beach.jpg" alt="An Ocean County, NJ beach with dune grass and a split-rail fence, overcast day" loading="lazy" width="2880" height="2160">
+      <figcaption class="photo-band-cap"><strong>Proudly serving Ocean County's shore communities</strong><span>From Toms River to Bayville — this is home.</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -327,20 +374,20 @@ footer a{color:#b9c8d4}
 <section id="communities" class="alt">
   <div class="wrap">
     <div class="eyebrow">For 55+ communities &amp; senior centers</div>
-    <h2>Bring First Mate Cyber to Your Clubhouse</h2>
+    <h2 class="reveal">Bring First Mate Cyber to Your Clubhouse</h2>
     <p class="section-intro">Live, current, and local — presentations built from real cases, updated every season. Nothing is sold from the stage.</p>
     <div class="community-grid">
-      <div class="comm">
+      <div class="comm reveal">
         <h3>Clubhouse Seminar</h3>
         <p>A 60–90 minute presentation on the scams targeting NJ seniors right now — with real examples, a live email breakdown, and free take-home cards for every seat.</p>
         <div class="cprice">$300 <span style="font-size:16px;color:#b9c8d4">· or free with a resident sign-up event</span></div>
       </div>
-      <div class="comm">
+      <div class="comm reveal">
         <h3>Scam Seasons Series</h3>
         <p>Four seminars a year, timed to when fraud actually peaks: tax season, storm-contractor season, Medicare open enrollment, and the holidays.</p>
         <div class="cprice">$1,000<span style="font-size:16px;color:#b9c8d4">/year</span></div>
       </div>
-      <div class="comm">
+      <div class="comm reveal">
         <h3>Newsletter Column</h3>
         <p>"The Scam Spotter" — a ready-to-print monthly column for your community newsletter covering what's circulating locally, delivered by the 20th.</p>
         <div class="cprice">$50<span style="font-size:16px;color:#b9c8d4">/month</span></div>
@@ -353,7 +400,7 @@ footer a{color:#b9c8d4}
 <section id="about">
   <div class="wrap">
     <div class="eyebrow">Who's behind First Mate Cyber</div>
-    <h2>A Neighbor Who Does This for a Living</h2>
+    <h2 class="reveal">A Neighbor Who Does This for a Living</h2>
     <div class="about-grid">
       <div class="about">
         <p>First Mate Cyber is owned and operated by <strong>Anthony</strong> — a New Jersey native and professional cybersecurity engineer who has spent years investigating the exact scams that target seniors: fake tech support calls, compromised email accounts, phishing, and fraud.</p>
@@ -361,7 +408,7 @@ footer a{color:#b9c8d4}
         <p>Getting targeted is not your fault, and falling for a professional con is not foolishness. These are organized criminal operations with scripts and quotas. You deserve a professional on <em>your</em> side, too.</p>
         <div class="pledge"><strong>Our pledge:</strong> We never cold-call seniors, never sell software or gadgets, never ask for your passwords, and never take payment by gift card. If anyone does — that's a scam, even if they claim to be us.</div>
       </div>
-      <div class="cred">
+      <div class="cred reveal">
         <h3>Credentials &amp; Assurance</h3>
         <ul>
           <li>Working cybersecurity engineer — active daily experience with current fraud campaigns</li>
@@ -374,13 +421,14 @@ footer a{color:#b9c8d4}
       </div>
     </div>
   </div>
+  <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,10 400,50 600,28 C800,6 1000,44 1200,24 L1200,60 L0,60 Z" fill="#16324a"/></svg></div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="eyebrow" style="color:#7fa8a8">Questions cost nothing</div>
-    <h2>Not Sure If Something's Real?</h2>
+    <h2 class="reveal">Not Sure If Something's Real?</h2>
     <p class="section-intro">Email a photo of any suspicious email, text, or letter. Your first question is always free — no strings attached.</p>
     <a class="bigphone" href="mailto:hello@firstmatecyber.com">hello@firstmatecyber.com</a>
     <p class="sub">Serving Toms River, Berkeley, Manchester, Whiting, Brick, Lacey &amp; all of Ocean County</p>
@@ -396,6 +444,25 @@ footer a{color:#b9c8d4}
     <p style="margin-top:10px">© 2027 First Mate Cyber LLC. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  document.addEventListener('DOMContentLoaded', function(){
+    document.body.classList.add('reveal-ready');
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    els.forEach(function(el){ io.observe(el); });
+  });
+})();
+</script>
 
 </body>
 </html>
