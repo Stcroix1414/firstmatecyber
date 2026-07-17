@@ -187,6 +187,22 @@ h2{font-size:clamp(30px,3.6vw,42px);margin-bottom:16px}
 .bigphone{font-family:'Bitter',serif;font-weight:800;font-size:clamp(26px,6.5vw,58px);color:var(--brass-bright);text-decoration:none;display:inline-block;margin-bottom:12px;max-width:100%;overflow-wrap:break-word;word-break:break-word}
 .contact .sub{font-size:21px;color:#a9bcc9;margin-bottom:30px}
 
+.contact-form{background:var(--white);color:var(--ink);border-radius:12px;padding:32px 30px;margin:8px auto 0;max-width:520px;text-align:left;box-shadow:0 20px 44px rgba(0,0,0,.3)}
+.contact-form h3{color:var(--navy);font-size:23px;margin-bottom:6px}
+.contact-form .form-sub{font-size:16px;color:#5c6a76;margin-bottom:22px}
+.contact-form .field{margin-bottom:16px}
+.contact-form label{display:block;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.contact-form input,.contact-form textarea{width:100%;padding:12px 14px;border:2px solid var(--paper-dark);border-radius:8px;font-family:inherit;font-size:17px;color:var(--ink);background:var(--paper)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--brass-bright)}
+.contact-form textarea{resize:vertical;min-height:110px}
+.hp-field{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden}
+.form-submit{width:100%;text-align:center;border:none;cursor:pointer;font-size:19px}
+.form-submit:disabled{opacity:.6;cursor:not-allowed;pointer-events:none}
+.form-status{margin-top:14px;font-size:15px;padding:10px 14px;border-radius:6px;display:none}
+.form-status.show{display:block}
+.form-status.success{background:#e4f3e4;color:#2a6b2a;border:1px solid #b9dcb9}
+.form-status.error{background:#fbeaea;color:#7a1f1f;border:1px solid #eec7c7}
+
 /* Footer */
 footer{background:var(--navy-deep);color:#8fa2b0;font-size:18px;padding:30px 0;text-align:center}
 footer a{color:#b9c8d4}
@@ -489,6 +505,36 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
     <p class="section-intro">Email a photo of any suspicious email, text, or letter. Online booking opens Spring 2027.</p>
     <a class="bigphone" href="mailto:hello@firstmatecyber.com">hello@firstmatecyber.com</a>
     <p class="sub">Serving Toms River, Berkeley, Manchester, Whiting, Brick, Lacey &amp; all of Ocean County</p>
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <h3>Or send us a message</h3>
+      <p class="form-sub">We'll reply by email — usually the same day.</p>
+
+      <div class="field">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="cf-phone">Phone <span style="font-weight:400;color:#8a97a1">(optional)</span></label>
+        <input type="tel" id="cf-phone" name="phone" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="cf-message">What's going on?</label>
+        <textarea id="cf-message" name="message" maxlength="1000" required></textarea>
+      </div>
+
+      <div class="field hp-field" aria-hidden="true">
+        <label for="cf-company">Company</label>
+        <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn btn-gold form-submit">Send Message</button>
+      <div class="form-status" id="cf-status"></div>
+    </form>
   </div>
 </section>
 
@@ -532,6 +578,72 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
     a.addEventListener('click', function(){
       links.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+(function(){
+  var form = document.getElementById('contact-form');
+  if(!form) return;
+  var status = document.getElementById('cf-status');
+  var submitBtn = form.querySelector('.form-submit');
+  var webhookB64 = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTUyNzU4MjUwNTA5MDI4NTY1MS9OMXU4RWw3X0d6UDZiTVFyeUl5dWNLeXphQ0N0cW9JbG92ZnY0MGJLd2w3MUdhUnhiNkZxcmVOdndYUUZvTUlzMUdzOA==';
+
+  function showStatus(msg, type){
+    status.textContent = msg;
+    status.className = 'form-status show ' + type;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    if(form.company.value){
+      showStatus("Thanks — we'll be in touch soon.", 'success');
+      form.reset();
+      return;
+    }
+
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var phone = form.phone.value.trim();
+    var message = form.message.value.trim();
+
+    if(!name || !email || !message){
+      showStatus('Please fill in your name, email, and message.', 'error');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    fetch(atob(webhookB64), {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        embeds: [{
+          title: 'New website contact',
+          color: 13144622,
+          fields: [
+            {name: 'Name', value: name},
+            {name: 'Email', value: email},
+            {name: 'Phone', value: phone || 'Not provided'},
+            {name: 'Message', value: message.slice(0, 1000)}
+          ],
+          timestamp: new Date().toISOString()
+        }]
+      })
+    }).then(function(res){
+      if(res.ok){
+        showStatus("Message sent — we'll reply by email soon.", 'success');
+        form.reset();
+      } else {
+        throw new Error('Request failed');
+      }
+    }).catch(function(){
+      showStatus('Something went wrong. Please email hello@firstmatecyber.com directly instead.', 'error');
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
     });
   });
 })();
