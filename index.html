@@ -78,6 +78,7 @@ header{background:var(--navy);position:sticky;top:0;z-index:50;box-shadow:0 2px 
 .btn-gold:hover{background:var(--brass-bright);transform:translateY(-2px)}
 .btn-ghost{border:2px solid #58748c;color:#e6edf3}
 .btn-ghost:hover{border-color:var(--brass-bright);color:var(--brass-bright);transform:translateY(-2px)}
+.disabled,.disabled:hover{background:#7c8894!important;color:#e4e8eb!important;border-color:#7c8894!important;cursor:not-allowed;pointer-events:none;box-shadow:none!important;transform:none!important;opacity:.85}
 .trust-row{display:flex;gap:26px;flex-wrap:wrap;font-size:16.5px;color:#a9bcc9}
 .trust-row span{display:flex;align-items:center;gap:8px}
 .trust-row svg{flex-shrink:0}
@@ -232,7 +233,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       <a href="#communities">For Communities</a>
       <a href="#about">About</a>
     </nav>
-    <a class="call-btn" href="https://calendar.app.google/i9yRGLKpePTLmXGW8" target="_blank" rel="noopener">Book a Call</a>
+    <span class="call-btn disabled" role="button" aria-disabled="true">Booking Opens Spring 2027</span>
   </div>
 </header>
 
@@ -254,13 +255,13 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       <h1>A local expert in your corner, <em>before</em> the scammers call.</h1>
       <p class="lead">First Mate Cyber specializes in protecting Ocean County seniors from phone, email, and computer scams — with a real person you can text a screenshot to and ask, <strong>"is this real?"</strong> We're glad to help neighbors of any age. Run by a professional cybersecurity engineer who investigates these scams for a living.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold" href="https://calendar.app.google/i9yRGLKpePTLmXGW8" target="_blank" rel="noopener">Book a Free Call</a>
+        <span class="btn btn-gold disabled" role="button" aria-disabled="true">Booking Opens Spring 2027</span>
         <a class="btn btn-ghost" href="#plans">See Protection Plans</a>
       </div>
-      <p class="hero-note">Your first call is free — up to 30 minutes, no obligation.</p>
+      <p class="hero-note">Online booking opens Spring 2027. Questions now? <a href="mailto:hello@firstmatecyber.com" style="color:#e6edf3;text-decoration:underline">Email us</a>.</p>
       <div class="trust-row">
-        <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg> Insured NJ business</span>
-        <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Background-checked</span>
+        <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg> Working cybersecurity engineer</span>
+        <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Local, not a call center</span>
         <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8922e" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Same-day answers</span>
       </div>
     </div>
@@ -326,7 +327,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
           <li>Trip charges waived on every home visit</li>
           <li>Priority scheduling</li>
         </ul>
-        <a class="btn btn-gold" href="https://calendar.app.google/i9yRGLKpePTLmXGW8" target="_blank" rel="noopener">Get Started</a>
+        <span class="btn btn-gold disabled" role="button" aria-disabled="true">Available Spring 2027</span>
       </div>
       <div class="plan featured reveal">
         <div class="tag">Most popular with families</div>
@@ -340,7 +341,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
           <li>Spam call &amp; junk email filtering, kept tuned</li>
           <li>One full scam cleanup per year included</li>
         </ul>
-        <a class="btn btn-gold" href="https://calendar.app.google/i9yRGLKpePTLmXGW8" target="_blank" rel="noopener">Get Started</a>
+        <span class="btn btn-gold disabled" role="button" aria-disabled="true">Available Spring 2027</span>
       </div>
     </div>
     <div class="gift-note"><strong>A gift for Mom or Dad:</strong> Adult children can purchase either plan for a parent in Ocean County. You'll receive a plain-English summary each quarter — what we checked, what we caught, and how they're doing.</div>
@@ -414,8 +415,8 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
         <ul>
           <li>Working cybersecurity engineer — active daily experience with current fraud campaigns</li>
           <li>CompTIA Security+ certified</li>
-          <li>Registered &amp; insured New Jersey business</li>
-          <li>Background check available on request</li>
+          <li>NJ business registration &amp; insurance in progress ahead of Spring 2027 launch</li>
+          <li>Background check will be completed before launch</li>
           <li>Written service agreement and flat pricing on every job</li>
           <li>Independent — no commissions, no products, no upsells</li>
         </ul>
@@ -430,10 +431,9 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
   <div class="wrap">
     <div class="eyebrow" style="color:#7fa8a8">Questions cost nothing</div>
     <h2 class="reveal">Not Sure If Something's Real?</h2>
-    <p class="section-intro">Email a photo of any suspicious email, text, or letter, or book a free call — up to 30 minutes, no strings attached.</p>
+    <p class="section-intro">Email a photo of any suspicious email, text, or letter. Online booking opens Spring 2027.</p>
     <a class="bigphone" href="mailto:hello@firstmatecyber.com">hello@firstmatecyber.com</a>
     <p class="sub">Serving Toms River, Berkeley, Manchester, Whiting, Brick, Lacey &amp; all of Ocean County</p>
-    <a class="btn btn-gold" href="https://calendar.app.google/i9yRGLKpePTLmXGW8" target="_blank" rel="noopener" style="margin-top:24px">Book a Free Call</a>
   </div>
 </section>
 
