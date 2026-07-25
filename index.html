@@ -18,238 +18,13 @@
 <meta name="twitter:title" content="First Mate Cyber — Scam Protection for Ocean County Seniors">
 <meta name="twitter:description" content="A local expert in your corner, before the scammers call. Email a screenshot and ask 'is this real?'">
 <meta name="twitter:image" content="https://firstmatecyber.com/images/og-image.png">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://discord.com; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --navy:#16324a;
-  --navy-deep:#0e2434;
-  --paper:#faf6ee;
-  --paper-dark:#f1ead9;
-  --ink:#22303c;
-  --brass:#a8781f;
-  --brass-bright:#c8922e;
-  --seafoam:#5d8a8a;
-  --flag:#b23a3a;
-  --white:#ffffff;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-body{
-  font-family:'Source Sans 3',Arial,sans-serif;
-  font-size:22px;
-  line-height:1.65;
-  color:var(--ink);
-  background:var(--paper);
-}
-h1,h2,h3{font-family:'Bitter',Georgia,serif;color:var(--navy);line-height:1.2}
-a{color:var(--navy)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--brass-bright);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
-
-/* ===== Top bar ===== */
-.topbar{background:var(--navy-deep);color:#e8e0cf;font-size:18px;padding:8px 0;text-align:center}
-.topbar strong{color:var(--brass-bright)}
-
-/* ===== Header ===== */
-header{background:var(--navy);position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap;position:relative}
-.nav-toggle{display:none;background:none;border:2px solid #58748c;border-radius:6px;padding:10px;cursor:pointer;flex-shrink:0}
-.nav-toggle span{display:block;width:24px;height:3px;background:#dfe7ee;border-radius:2px}
-.nav-toggle span+span{margin-top:5px}
-.nav-toggle:hover{border-color:var(--brass-bright)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{flex-shrink:0}
-.brand-name{font-family:'Bitter',serif;font-weight:800;font-size:29px;color:var(--white);letter-spacing:.5px}
-.brand-sub{display:block;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:14px;color:var(--brass-bright);letter-spacing:2.5px;text-transform:uppercase}
-.nav-links{display:flex;gap:26px;flex-wrap:wrap}
-.nav-links a{color:#dfe7ee;text-decoration:none;font-weight:600;font-size:19px}
-.nav-links a:hover{color:var(--brass-bright)}
-.call-btn{background:var(--brass);color:var(--white);text-decoration:none;font-weight:700;font-size:20px;padding:10px 20px;border-radius:6px;white-space:nowrap}
-.call-btn{transition:background .2s ease,transform .2s ease}
-.call-btn:hover{background:var(--brass-bright);transform:translateY(-2px)}
-
-/* ===== Hero ===== */
-.hero{
-  background:
-    radial-gradient(ellipse 640px 420px at 82% 12%, rgba(200,146,46,.16), transparent 60%),
-    linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
-  color:#eef3f7;padding:72px 0 96px;overflow:hidden;position:relative;
-}
-.compass-rose{position:absolute;top:-100px;right:-110px;opacity:.15;pointer-events:none}
-.wave-divider{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:64px;line-height:0}
-.wave-divider svg{display:block;width:100%;height:100%}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;z-index:1}
-.badge-soon{display:inline-block;background:var(--brass);color:var(--white);font-weight:700;font-size:17px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;border-radius:20px;margin-bottom:20px}
-.hero h1{color:var(--white);font-size:clamp(38px,5vw,58px);font-weight:800;margin-bottom:22px}
-.hero h1 em{font-style:normal;color:var(--brass-bright)}
-.hero p.lead{font-size:25px;line-height:1.6;color:#cfdae3;margin-bottom:30px;max-width:34em}
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.hero-note{font-size:17px;color:#a9bcc9;margin-bottom:24px}
-.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:21px;padding:15px 28px;border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease}
-.btn-gold{background:var(--brass);color:var(--white)}
-.btn-gold:hover{background:var(--brass-bright);transform:translateY(-2px)}
-.btn-ghost{border:2px solid #58748c;color:#e6edf3}
-.btn-ghost:hover{border-color:var(--brass-bright);color:var(--brass-bright);transform:translateY(-2px)}
-.disabled,.disabled:hover{background:#7c8894!important;color:#e4e8eb!important;border-color:#7c8894!important;cursor:not-allowed;pointer-events:none;box-shadow:none!important;transform:none!important;opacity:.85}
-.trust-row{display:flex;gap:26px;flex-wrap:wrap;font-size:18px;color:#a9bcc9}
-.trust-row span{display:flex;align-items:center;gap:8px}
-.trust-row svg{flex-shrink:0}
-
-/* Fridge card — signature element */
-.fridge-card{
-  background:var(--paper);color:var(--ink);border-radius:12px;
-  box-shadow:0 24px 50px rgba(0,0,0,.45), 0 3px 8px rgba(0,0,0,.3);
-  transform:rotate(2.5deg);padding:26px 28px;max-width:400px;justify-self:center;
-  border-top:10px solid var(--flag);
-  transition:transform .3s ease,box-shadow .3s ease;
-}
-.fridge-card:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 30px 58px rgba(0,0,0,.5), 0 4px 10px rgba(0,0,0,.35)}
-.fridge-card h3{font-size:23px;letter-spacing:1px;text-transform:uppercase;color:var(--flag);margin-bottom:4px}
-.fridge-card p.small{font-size:17px;color:#5c6a76;margin-bottom:14px;font-weight:600}
-.fridge-card ol{list-style:none;counter-reset:rule}
-.fridge-card li{counter-increment:rule;display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--paper-dark);font-size:20px;font-weight:600;line-height:1.4}
-.fridge-card li::before{content:counter(rule);font-family:'Bitter',serif;font-weight:800;color:var(--brass);font-size:21px;min-width:24px}
-.fridge-card .card-foot{margin-top:14px;padding-top:12px;border-top:2px dashed var(--paper-dark);font-size:18px;font-weight:700;color:var(--navy);text-align:center}
-.magnet{width:52px;height:14px;background:linear-gradient(180deg,#8a8f94,#5d6266);border-radius:7px;margin:-40px auto 22px;box-shadow:0 2px 4px rgba(0,0,0,.4);position:relative;top:-8px}
-
-/* ===== Sections ===== */
-section{padding:76px 0}
-.eyebrow{font-size:17px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--seafoam);margin-bottom:10px}
-h2{font-size:clamp(30px,3.6vw,42px);margin-bottom:16px}
-.section-intro{font-size:23px;max-width:42em;margin-bottom:44px;color:#3d4a55}
-
-/* How it works */
-.alt{background:var(--paper-dark)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.step{background:var(--white);border-radius:10px;padding:30px 28px;border-top:5px solid var(--seafoam);box-shadow:0 4px 14px rgba(22,50,74,.08);transition:transform .25s ease,box-shadow .25s ease}
-.step:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(22,50,74,.16)}
-.step h3{font-size:24px;margin:14px 0 10px}
-.step p{font-size:20px;color:#3d4a55}
-.step .ico{width:52px;height:52px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
-
-/* Local photo band */
-.photo-band{margin:44px 0 0;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(22,50,74,.2);background:var(--white)}
-.photo-band img{display:block;width:100%;height:clamp(220px,34vw,380px);object-fit:cover;object-position:center 62%}
-.photo-band-cap{padding:20px 26px;color:var(--ink)}
-.photo-band-cap strong{display:block;font-family:'Bitter',serif;font-size:clamp(22px,2.8vw,28px);margin-bottom:4px;color:var(--navy)}
-.photo-band-cap span{font-size:18px;color:#5c6a76}
-
-/* Plans */
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px}
-.plan{background:var(--white);border-radius:12px;padding:36px 34px;box-shadow:0 6px 20px rgba(22,50,74,.1);border:1px solid #e5ddc9;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
-.plan:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(22,50,74,.18)}
-.plan.featured{border:3px solid var(--brass);position:relative}
-.plan .tag{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--brass);color:var(--white);font-weight:700;font-size:16px;letter-spacing:1px;padding:5px 18px;border-radius:20px;white-space:nowrap}
-.plan h3{font-size:27px;margin-bottom:6px}
-.price{font-family:'Bitter',serif;font-size:48px;font-weight:800;color:var(--navy)}
-.price small{font-family:'Source Sans 3',sans-serif;font-size:20px;font-weight:600;color:#5c6a76}
-.plan ul{list-style:none;margin:22px 0 28px;flex-grow:1}
-.plan li{padding:9px 0 9px 34px;position:relative;font-size:20px;border-top:1px solid var(--paper-dark)}
-.plan li::before{content:'';position:absolute;left:2px;top:14px;width:20px;height:20px;background:var(--seafoam);border-radius:50%;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
-  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
-.plan .btn{text-align:center}
-.gift-note{margin-top:26px;font-size:20px;background:var(--white);border-left:5px solid var(--brass);padding:18px 22px;border-radius:0 8px 8px 0;max-width:900px}
-
-/* One-time services */
-.svc-table-wrap{border-radius:10px;box-shadow:0 4px 14px rgba(22,50,74,.08);overflow-x:auto;-webkit-overflow-scrolling:touch}
-.svc-table{width:100%;min-width:640px;border-collapse:collapse;background:var(--white);border-radius:10px;overflow:hidden}
-.svc-table th{background:var(--navy);color:var(--white);text-align:left;padding:16px 22px;font-size:20px;letter-spacing:.5px}
-.svc-table td{padding:18px 22px;border-top:1px solid var(--paper-dark);font-size:20px;vertical-align:top}
-.svc-table td:last-child{font-family:'Bitter',serif;font-weight:700;color:var(--navy);white-space:nowrap;font-size:22px}
-.svc-table tr:nth-child(even) td{background:#fcfaf4}
-.svc-name{font-weight:700;color:var(--navy);display:block;font-size:21px}
-
-/* Community */
-.community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.comm{background:var(--navy);color:#dfe7ee;border-radius:10px;padding:32px 28px;transition:transform .25s ease,box-shadow .25s ease}
-.comm:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.35)}
-.comm h3{color:var(--white);font-size:24px;margin-bottom:10px}
-.comm p{font-size:19px;color:#b9c8d4;margin-bottom:16px}
-.comm .cprice{font-family:'Bitter',serif;font-weight:700;font-size:24px;color:var(--brass-bright)}
-
-/* Background / credibility */
-#background{position:relative;padding-bottom:110px}
-.background-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.comm .ico{width:48px;height:48px;border-radius:50%;background:var(--brass);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.background-grid .comm p{margin-bottom:0}
-
-/* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.about p{margin-bottom:18px;font-size:21px}
-.cred{background:var(--white);border-radius:10px;padding:30px;box-shadow:0 4px 14px rgba(22,50,74,.08);transition:transform .25s ease,box-shadow .25s ease}
-.cred:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(22,50,74,.16)}
-.cred h3{font-size:23px;margin-bottom:16px}
-.cred ul{list-style:none}
-.cred li{padding:10px 0 10px 34px;position:relative;border-top:1px solid var(--paper-dark);font-size:20px}
-.cred li::before{content:'';position:absolute;left:2px;top:15px;width:20px;height:20px;background:var(--brass);border-radius:50%;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
-  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
-.pledge{background:var(--paper-dark);border-radius:10px;padding:26px 28px;margin-top:24px;font-size:20px}
-.pledge strong{color:var(--flag)}
-
-/* Contact */
-.contact{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e6edf3;text-align:center}
-.contact h2{color:var(--white)}
-.contact .section-intro{color:#c3d1dc;margin:0 auto 36px}
-.bigphone{font-family:'Bitter',serif;font-weight:800;font-size:clamp(26px,6.5vw,58px);color:var(--brass-bright);text-decoration:none;display:inline-block;margin-bottom:12px;max-width:100%;overflow-wrap:break-word;word-break:break-word}
-.contact .sub{font-size:21px;color:#a9bcc9;margin-bottom:30px}
-
-.contact-form{background:var(--white);color:var(--ink);border-radius:12px;padding:32px 30px;margin:8px auto 0;max-width:520px;text-align:left;box-shadow:0 20px 44px rgba(0,0,0,.3)}
-.contact-form h3{color:var(--navy);font-size:23px;margin-bottom:6px}
-.contact-form .form-sub{font-size:16px;color:#5c6a76;margin-bottom:22px}
-.contact-form .field{margin-bottom:16px}
-.contact-form label{display:block;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
-.contact-form input,.contact-form textarea{width:100%;padding:12px 14px;border:2px solid var(--paper-dark);border-radius:8px;font-family:inherit;font-size:17px;color:var(--ink);background:var(--paper)}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--brass-bright)}
-.contact-form textarea{resize:vertical;min-height:110px}
-.hp-field{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden}
-.form-submit{width:100%;text-align:center;border:none;cursor:pointer;font-size:19px}
-.form-submit:disabled{opacity:.6;cursor:not-allowed;pointer-events:none}
-.form-privacy{font-size:13px;color:#8a97a1;text-align:center;margin-top:10px}
-.form-status{margin-top:14px;font-size:15px;padding:10px 14px;border-radius:6px;display:none}
-.form-status.show{display:block}
-.form-status.success{background:#e4f3e4;color:#2a6b2a;border:1px solid #b9dcb9}
-.form-status.error{background:#fbeaea;color:#7a1f1f;border:1px solid #eec7c7}
-
-/* Footer */
-footer{background:var(--navy-deep);color:#8fa2b0;font-size:18px;padding:30px 0;text-align:center}
-footer a{color:#b9c8d4}
-
-/* Scroll reveal (progressive enhancement — no JS/no IO = fully visible) */
-.reveal{transition:opacity .7s ease, transform .7s ease}
-body.reveal-ready .reveal{opacity:0;transform:translateY(24px)}
-body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
-.steps .step:nth-child(2){transition-delay:.1s}
-.steps .step:nth-child(3){transition-delay:.2s}
-.plans .plan:nth-child(2){transition-delay:.1s}
-.community-grid .comm:nth-child(2){transition-delay:.1s}
-.community-grid .comm:nth-child(3){transition-delay:.2s}
-.background-grid .comm:nth-child(2){transition-delay:.1s}
-.background-grid .comm:nth-child(3){transition-delay:.2s}
-.background-grid .comm:nth-child(4){transition-delay:.3s}
-
-/* ===== Responsive ===== */
-@media(max-width:900px){
-  .hero-grid,.about-grid{grid-template-columns:1fr}
-  .steps,.community-grid,.background-grid{grid-template-columns:1fr}
-  .plans{grid-template-columns:1fr}
-  .fridge-card{transform:rotate(0);margin-top:12px}
-  .nav-toggle{display:inline-block}
-  .nav-links{display:none;flex-direction:column;gap:0;width:100%;background:var(--navy-deep);position:absolute;left:0;right:0;top:100%;padding:6px 24px 18px;box-shadow:0 10px 20px rgba(0,0,0,.35)}
-  .nav-links.open{display:flex}
-  .nav-links a{padding:14px 0;border-top:1px solid rgba(255,255,255,.1)}
-  .nav-links a:first-child{border-top:none}
-  section{padding:56px 0}
-  .svc-table td:last-child{white-space:normal}
-}
-</style>
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
@@ -259,7 +34,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="First Mate Cyber home">
+    <a class="brand" href="index.html" aria-label="First Mate Cyber home">
       <svg width="40" height="45" viewBox="0 0 200 226" aria-hidden="true">
         <path d="M 100 26 C 118 40 140 48 160 50 C 168 51 172 52 172 52 L 172 108 C 172 150 145 178 100 200 C 55 178 28 150 28 108 L 28 52 C 28 52 32 51 40 50 C 60 48 82 40 100 26 Z" fill="none" stroke="#c8922e" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
         <path d="M 100 26 C 118 40 140 48 160 50 C 168 51 172 52 172 52 L 172 108 C 172 150 145 178 100 200 C 55 178 28 150 28 108 L 28 52 C 28 52 32 51 40 50 C 60 48 82 40 100 26 Z" fill="none" stroke="#e8c07a" stroke-width="3.52" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6.05 10.5" opacity="0.85"/>
@@ -275,12 +50,11 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       <span class="brand-sub">Scam Protection · Ocean County NJ</span></span>
     </a>
     <nav id="nav-links" class="nav-links" aria-label="Main">
-      <a href="#how">How It Works</a>
-      <a href="#plans">Plans</a>
-      <a href="#services">Services</a>
-      <a href="#communities">For Communities</a>
-      <a href="#about">About</a>
-      <a href="#background">Background</a>
+      <a href="index.html#how">How It Works</a>
+      <a href="plans.html">Plans &amp; Pricing</a>
+      <a href="communities.html">For Communities</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <span class="call-btn disabled" role="button" aria-disabled="true">Booking Opens Spring 2027</span>
     <button type="button" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
@@ -308,7 +82,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
       <p class="lead">First Mate Cyber specializes in protecting Ocean County seniors from phone, email, and computer scams — with a real person you can email a screenshot to and ask, <strong>"is this real?"</strong> We're glad to help neighbors of any age. Run by a professional cybersecurity engineer who investigates these scams for a living.</p>
       <div class="hero-ctas">
         <span class="btn btn-gold disabled" role="button" aria-disabled="true">Booking Opens Spring 2027</span>
-        <a class="btn btn-ghost" href="#plans">See Protection Plans</a>
+        <a class="btn btn-ghost" href="plans.html">See Protection Plans</a>
       </div>
       <p class="hero-note">Online booking opens Spring 2027. Questions now? <a href="mailto:hello@firstmatecyber.com" style="color:#e6edf3;text-decoration:underline">Email us</a>.</p>
       <div class="trust-row">
@@ -362,157 +136,48 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
   </div>
 </section>
 
-<!-- PLANS -->
-<section id="plans" class="alt">
+<!-- QUICK LINKS -->
+<section id="quicklinks" class="alt">
   <div class="wrap">
-    <div class="eyebrow">Monthly protection</div>
-    <h2 class="reveal">Protection Plans</h2>
-    <p class="section-intro">Both plans include <strong>unlimited phone support</strong> — call or text as often as you need, and most problems get fixed right over the phone, free. Less than one dinner out per month.</p>
-    <div class="plans">
-      <div class="plan reveal">
-        <h3>Peace of Mind</h3>
-        <div class="price">$25<small>/month</small></div>
-        <ul>
-          <li><strong>Unlimited phone &amp; text support</strong> — "is this real?", walkthrough fixes, straight answers, same day</li>
-          <li>Monthly scam alert — what's circulating in Ocean County right now</li>
-          <li>A family member kept in the loop, if you'd like</li>
-          <li>No travel adjustment anywhere in Ocean County, even outside our core area</li>
-          <li>Priority scheduling</li>
-        </ul>
-        <span class="btn btn-gold disabled" role="button" aria-disabled="true">Available Spring 2027</span>
-      </div>
-      <div class="plan featured reveal">
-        <div class="tag">Most popular with families</div>
-        <h3>Digital Bodyguard</h3>
-        <div class="price">$50<small>/month</small></div>
-        <ul>
-          <li>Everything in Peace of Mind</li>
-          <li>Quarterly in-home checkup — computer, phone &amp; tablet</li>
-          <li>Email &amp; bank account security hardening</li>
-          <li>Your accounts set up so <em>you're</em> alerted directly if someone signs in from somewhere new</li>
-          <li>Spam call &amp; junk email filtering, kept tuned</li>
-          <li>One full scam cleanup per year included</li>
-        </ul>
-        <span class="btn btn-gold disabled" role="button" aria-disabled="true">Available Spring 2027</span>
-      </div>
-    </div>
-    <div class="gift-note"><strong>A gift for Mom or Dad:</strong> Adult children can purchase either plan for a parent in Ocean County. You'll receive a plain-English summary each quarter — what we checked, what we caught, and how they're doing.</div>
-  </div>
-</section>
-
-<!-- ONE-TIME SERVICES -->
-<section id="services">
-  <div class="wrap">
-    <div class="eyebrow">No hourly rates, ever</div>
-    <h2 class="reveal">House Calls — Flat Pricing</h2>
-    <p class="section-intro"><strong>We make house calls.</strong> One flat price — no hourly rate, no trip fee, no surprises. Travel is included anywhere in our core service area, and you get a written summary of everything we did. Many problems never need a visit at all: phone fixes are free for members.</p>
-    <div class="svc-table-wrap reveal">
-      <table class="svc-table">
-        <thead><tr><th scope="col">Service</th><th scope="col">What's included</th><th scope="col">Price</th></tr></thead>
-        <tbody>
-          <tr><td><span class="svc-name">Scam Cleanup</span></td><td>Already clicked, paid, or let someone into your computer? We remove their access, secure every account, help contact your bank, and file the official reports — with a written summary for your family.</td><td>$250–450</td></tr>
-          <tr><td><span class="svc-name">Home Digital Checkup</span></td><td>A full review of your computers, phones, tablets, and Wi-Fi — up to 3 devices, problems fixed on the spot, plus a simple report card. Additional devices $25 each.</td><td>$175</td></tr>
-          <tr><td><span class="svc-name">Account Lockdown</span></td><td>Your email, bank, Social Security, and Medicare accounts secured properly — strong passwords, two-step sign-in, recovery info updated.</td><td>$150</td></tr>
-          <tr><td><span class="svc-name">Safe Setup</span></td><td>A new phone or computer set up the right way: scam-call screening, spam filters, safe settings, and a printed guide.</td><td>$125</td></tr>
-          <tr><td><span class="svc-name">Family Briefing</span></td><td>A one-hour session with your adult children — in person or by video — covering what's protected and what to watch for.</td><td>$75</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="gift-note" style="margin-top:26px"><strong>Service area:</strong> flat prices include travel to Toms River, Berkeley, Manchester, Whiting, Beachwood, Pine Beach, South Toms River &amp; Bayville. A little farther out? We'll quote one flat price by email before we book. Members: no travel adjustment anywhere in Ocean County.</div>
-    <figure class="photo-band reveal">
-      <img src="images/ocean-county-beach.jpg" alt="An Ocean County, NJ beach with dune grass and a split-rail fence, overcast day" loading="lazy" width="2880" height="2160">
-      <figcaption class="photo-band-cap"><strong>Proudly serving Ocean County's shore communities</strong><span>From Toms River to Bayville — this is home.</span></figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- COMMUNITIES -->
-<section id="communities" class="alt">
-  <div class="wrap">
-    <div class="eyebrow">For 55+ communities &amp; senior centers</div>
-    <h2 class="reveal">Bring First Mate Cyber to Your Clubhouse</h2>
-    <p class="section-intro">Live, current, and local — presentations built from real cases, updated every season. Nothing is sold from the stage.</p>
-    <div class="community-grid">
-      <div class="comm reveal">
-        <h3>Clubhouse Seminar</h3>
-        <p>A 60–90 minute presentation on the scams targeting NJ seniors right now — with real examples, a live email breakdown, and free take-home cards for every seat.</p>
-        <div class="cprice">$300 <span style="font-size:18px;color:#b9c8d4">· or free with a resident sign-up event</span></div>
-      </div>
-      <div class="comm reveal">
-        <h3>Scam Seasons Series</h3>
-        <p>Four seminars a year, timed to when fraud actually peaks: tax season, storm-contractor season, Medicare open enrollment, and the holidays.</p>
-        <div class="cprice">$1,000<span style="font-size:18px;color:#b9c8d4">/year</span></div>
-      </div>
-      <div class="comm reveal">
-        <h3>Newsletter Column</h3>
-        <p>"The Scam Spotter" — a ready-to-print monthly column for your community newsletter covering what's circulating locally, delivered by the 20th.</p>
-        <div class="cprice">$50<span style="font-size:18px;color:#b9c8d4">/month</span></div>
-      </div>
+    <div class="eyebrow">Find what you need</div>
+    <h2 class="reveal">What Can We Help With?</h2>
+    <p class="section-intro">Pick what fits — each one takes you straight to the details, no scrolling required.</p>
+    <div class="quicklinks-grid">
+      <a class="qlink reveal" href="plans.html">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
+        <h3>Monthly Protection Plans</h3>
+        <p>Unlimited phone support, "is this real?" checks, and priority scheduling — from $25/month.</p>
+        <span class="go">See plans &amp; pricing →</span>
+      </a>
+      <a class="qlink reveal" href="plans.html#services">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg></div>
+        <h3>House Calls &amp; Cleanup</h3>
+        <p>Flat-rate, no-hourly-rate service: scam cleanup, account lockdown, safe setup, and more.</p>
+        <span class="go">See services &amp; prices →</span>
+      </a>
+      <a class="qlink reveal" href="communities.html">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>For Communities &amp; Clubhouses</h3>
+        <p>Seminars, a seasonal speaker series, and a monthly newsletter column for 55+ communities.</p>
+        <span class="go">Bring us to your clubhouse →</span>
+      </a>
+      <a class="qlink reveal" href="about.html">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg></div>
+        <h3>Who's Behind First Mate Cyber</h3>
+        <p>A working cybersecurity engineer, his credentials, and the pledge we hold ourselves to.</p>
+        <span class="go">Meet Anthony →</span>
+      </a>
+      <a class="qlink reveal" href="contact.html">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3>Not Sure If Something's Real?</h3>
+        <p>Email a photo of any suspicious message and get a straight answer — questions cost nothing.</p>
+        <span class="go">Get in touch →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="eyebrow">Who's behind First Mate Cyber</div>
-    <h2 class="reveal">A Neighbor Who Does This for a Living</h2>
-    <div class="about-grid">
-      <div class="about">
-        <p>First Mate Cyber is owned and operated by <strong>Anthony</strong> — a New Jersey native and professional cybersecurity engineer who has spent years investigating the exact scams that target seniors: fake tech support calls, compromised email accounts, phishing, and fraud.</p>
-        <p>Most days, he protects businesses from these criminals. First Mate Cyber exists because the people who need that protection most — and get it least — are our parents and grandparents. That's our specialty, but we're happy to help any neighbor in Ocean County who needs a straight answer.</p>
-        <p>Getting targeted is not your fault, and falling for a professional con is not foolishness. These are organized criminal operations with scripts and quotas. You deserve a professional on <em>your</em> side, too.</p>
-        <div class="pledge"><strong>Our pledge:</strong> We never cold-call seniors, never sell software or gadgets, never ask for your passwords, and never take payment by gift card. If anyone does — that's a scam, even if they claim to be us.</div>
-      </div>
-      <div class="cred reveal">
-        <h3>Credentials &amp; Assurance</h3>
-        <ul>
-          <li>Working cybersecurity engineer — active daily experience with current fraud campaigns</li>
-          <li>CompTIA Security+ certified</li>
-          <li>NJ business registration &amp; insurance in progress ahead of Spring 2027 launch</li>
-          <li>Background check will be completed before launch</li>
-          <li>Written service agreement and flat pricing on every job</li>
-          <li>Independent — no commissions, no products, no upsells</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BACKGROUND -->
-<section id="background" class="alt">
-  <div class="wrap">
-    <div class="eyebrow">Real-world experience, not a certification alone</div>
-    <h2 class="reveal">What I Actually Deal With, Day to Day</h2>
-    <p class="section-intro">This isn't theoretical. Every week, I'm the person a business calls when something's already gone wrong — and I fix it. Here's the kind of work that experience is built on:</p>
-    <div class="background-grid">
-      <div class="comm reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-        <h3>Ransomware Response</h3>
-        <p>When a company's files get locked and criminals demand payment, I'm the one who gets called at 2am. I contain the damage, work out what happened, and get the business running again — without paying the ransom. What actually makes that possible is having real, working backups, so I make sure yours are solid <em>before</em> disaster strikes, not after.</p>
-      </div>
-      <div class="comm reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-        <h3>Email Account Takeovers</h3>
-        <p>Scammers break into email accounts constantly — reading messages, redirecting invoices, impersonating people to steal money. I investigate exactly how they got in, lock them out for good, and trace what they touched.</p>
-      </div>
-      <div class="comm reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M21 21l-5.2-5.2"/></svg></div>
-        <h3>Phishing &amp; Fraud Investigation</h3>
-        <p>I analyze the scam emails and fake websites criminals use to trick people, including sophisticated attacks that can slip past two-factor authentication. I know their playbook because I take it apart for a living.</p>
-      </div>
-      <div class="comm reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6ee" stroke-width="2" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
-        <h3>Reporting &amp; Documentation</h3>
-        <p>After every incident, I write a clear report — what happened, what I fixed, what to watch for. You get the same thing after every visit: no jargon, just a plain answer.</p>
-      </div>
-    </div>
-    <div class="gift-note" style="margin-top:40px;font-style:italic">"I bring this same level of seriousness to a grandmother's laptop that I bring to a company's entire network. The scams are often identical — just aimed at someone with less backup."</div>
-  </div>
-  <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,10 400,50 600,28 C800,6 1000,44 1200,24 L1200,60 L0,60 Z" fill="#16324a"/></svg></div>
-</section>
-
-<!-- CONTACT -->
+<!-- CONTACT CTA -->
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="eyebrow" style="color:#7fa8a8">Questions cost nothing</div>
@@ -520,37 +185,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
     <p class="section-intro">Email a photo of any suspicious email, text, or letter. Online booking opens Spring 2027.</p>
     <a class="bigphone" href="mailto:hello@firstmatecyber.com">hello@firstmatecyber.com</a>
     <p class="sub">Serving Toms River, Berkeley, Manchester, Whiting, Brick, Lacey &amp; all of Ocean County</p>
-
-    <form class="contact-form" id="contact-form" novalidate>
-      <h3>Or send us a message</h3>
-      <p class="form-sub">We'll reply by email — usually the same day.</p>
-
-      <div class="field">
-        <label for="cf-name">Name</label>
-        <input type="text" id="cf-name" name="name" required autocomplete="name">
-      </div>
-      <div class="field">
-        <label for="cf-email">Email</label>
-        <input type="email" id="cf-email" name="email" required autocomplete="email">
-      </div>
-      <div class="field">
-        <label for="cf-phone">Phone <span style="font-weight:400;color:#8a97a1">(optional)</span></label>
-        <input type="tel" id="cf-phone" name="phone" autocomplete="tel">
-      </div>
-      <div class="field">
-        <label for="cf-message">What's going on?</label>
-        <textarea id="cf-message" name="message" maxlength="1000" required></textarea>
-      </div>
-
-      <div class="field hp-field" aria-hidden="true">
-        <label for="cf-company">Company</label>
-        <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
-      </div>
-
-      <button type="submit" class="btn btn-gold form-submit">Send Message</button>
-      <p class="form-privacy">We only use this to reply to you — never sold, never shared.</p>
-      <div class="form-status" id="cf-status"></div>
-    </form>
+    <a class="btn btn-gold" href="contact.html">Send Us a Message</a>
   </div>
 </section>
 
@@ -564,135 +199,7 @@ body.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
   </div>
 </footer>
 
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)) return;
-  document.addEventListener('DOMContentLoaded', function(){
-    document.body.classList.add('reveal-ready');
-    var els = document.querySelectorAll('.reveal');
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.15});
-    els.forEach(function(el){ io.observe(el); });
-  });
-})();
-
-(function(){
-  var toggle = document.querySelector('.nav-toggle');
-  var links = document.getElementById('nav-links');
-  if(!toggle || !links) return;
-  toggle.addEventListener('click', function(){
-    var open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  links.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-
-(function(){
-  var form = document.getElementById('contact-form');
-  if(!form) return;
-  var status = document.getElementById('cf-status');
-  var submitBtn = form.querySelector('.form-submit');
-  var webhookB64 = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTUyNzU4MjUwNTA5MDI4NTY1MS9OMXU4RWw3X0d6UDZiTVFyeUl5dWNLeXphQ0N0cW9JbG92ZnY0MGJLd2w3MUdhUnhiNkZxcmVOdndYUUZvTUlzMUdzOA==';
-  var COOLDOWN_MS = 45000;
-  var COOLDOWN_KEY = 'fmc_contact_last_submit';
-
-  function showStatus(msg, type){
-    status.textContent = msg;
-    status.className = 'form-status show ' + type;
-  }
-
-  function msSinceLastSubmit(){
-    var last = Number(sessionStorage.getItem(COOLDOWN_KEY) || 0);
-    return Date.now() - last;
-  }
-
-  function applyCooldownLock(remainingMs){
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Please wait ' + Math.ceil(remainingMs / 1000) + 's...';
-    setTimeout(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
-    }, remainingMs);
-  }
-
-  var elapsed = msSinceLastSubmit();
-  if(elapsed < COOLDOWN_MS){
-    applyCooldownLock(COOLDOWN_MS - elapsed);
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    if(form.company.value){
-      showStatus("Thanks — we'll be in touch soon.", 'success');
-      form.reset();
-      return;
-    }
-
-    var remaining = COOLDOWN_MS - msSinceLastSubmit();
-    if(remaining > 0){
-      showStatus('Please wait a moment before sending another message.', 'error');
-      applyCooldownLock(remaining);
-      return;
-    }
-
-    var name = form.name.value.trim();
-    var email = form.email.value.trim();
-    var phone = form.phone.value.trim();
-    var message = form.message.value.trim();
-
-    if(!name || !email || !message){
-      showStatus('Please fill in your name, email, and message.', 'error');
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    fetch(atob(webhookB64), {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        embeds: [{
-          title: 'New website contact',
-          color: 13144622,
-          fields: [
-            {name: 'Name', value: name},
-            {name: 'Email', value: email},
-            {name: 'Phone', value: phone || 'Not provided'},
-            {name: 'Message', value: message.slice(0, 1000)}
-          ],
-          timestamp: new Date().toISOString()
-        }]
-      })
-    }).then(function(res){
-      if(res.ok){
-        showStatus("Message sent — we'll reply by email soon.", 'success');
-        form.reset();
-        sessionStorage.setItem(COOLDOWN_KEY, String(Date.now()));
-        applyCooldownLock(COOLDOWN_MS);
-      } else {
-        throw new Error('Request failed');
-      }
-    }).catch(function(){
-      showStatus('Something went wrong. Please email hello@firstmatecyber.com directly instead.', 'error');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
-    });
-  });
-})();
-</script>
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>
